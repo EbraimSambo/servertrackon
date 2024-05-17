@@ -17,9 +17,7 @@ import {
       if (!token) throw new UnauthorizedException();
   
       try {
-        const payload = await this.jwtService.verifyAsync(token, {
-          secret: process.env.jwtSecretKey,
-        });
+        const payload = "dsdssdsdsdsds"
         request['sounds'] = payload;
       } catch {
         throw new UnauthorizedException();

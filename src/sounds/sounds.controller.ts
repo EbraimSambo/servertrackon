@@ -13,7 +13,7 @@ export class SoundsController {
     return this.soundsService.create(createSoundDto);
   }
 
-
+  @UseGuards(JwtGuardSounds)
   @Get()
   findAll() {
     return this.soundsService.findAll();

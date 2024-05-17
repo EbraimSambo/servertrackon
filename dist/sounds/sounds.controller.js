@@ -17,6 +17,7 @@ const common_1 = require("@nestjs/common");
 const sounds_service_1 = require("./sounds.service");
 const create_sound_dto_1 = require("./dto/create-sound.dto");
 const update_sound_dto_1 = require("./dto/update-sound.dto");
+const soundJwt_guard_1 = require("./guards/soundJwt.guard");
 let SoundsController = class SoundsController {
     constructor(soundsService) {
         this.soundsService = soundsService;
@@ -46,6 +47,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], SoundsController.prototype, "create", null);
 __decorate([
+    (0, common_1.UseGuards)(soundJwt_guard_1.JwtGuardSounds),
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
