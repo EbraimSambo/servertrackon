@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards } from '@nestjs/common';
 import { SoundsService } from './sounds.service';
 import { CreateSoundDto } from './dto/create-sound.dto';
 import { UpdateSoundDto } from './dto/update-sound.dto';
+import { JwtGuardSounds } from './guards/soundJwt.guard';
 
 @Controller('sounds')
 export class SoundsController {
@@ -11,6 +12,7 @@ export class SoundsController {
   create(@Body() createSoundDto: CreateSoundDto) {
     return this.soundsService.create(createSoundDto);
   }
+
 
   @Get()
   findAll() {

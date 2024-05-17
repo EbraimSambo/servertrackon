@@ -10,13 +10,14 @@ exports.SoundsModule = void 0;
 const common_1 = require("@nestjs/common");
 const sounds_service_1 = require("./sounds.service");
 const sounds_controller_1 = require("./sounds.controller");
+const jwt_1 = require("@nestjs/jwt");
 let SoundsModule = class SoundsModule {
 };
 exports.SoundsModule = SoundsModule;
 exports.SoundsModule = SoundsModule = __decorate([
     (0, common_1.Module)({
         controllers: [sounds_controller_1.SoundsController],
-        providers: [sounds_service_1.SoundsService],
+        providers: [sounds_service_1.SoundsService, jwt_1.JwtService],
     })
 ], SoundsModule);
 //# sourceMappingURL=sounds.module.js.map
