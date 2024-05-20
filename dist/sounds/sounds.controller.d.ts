@@ -5,29 +5,22 @@ export declare class SoundsController {
     private readonly soundsService;
     constructor(soundsService: SoundsService);
     create(createSoundDto: CreateSoundDto): string;
-    findAll(): ({
+    findAll(): {
         id: number;
         title: string;
         slug: any;
         artist: string;
-        cover: string;
-        audio?: undefined;
-    } | {
-        id: number;
-        slug: any;
-        title: string;
         audio: string;
         cover: string;
-        artist?: undefined;
-    } | {
+    }[];
+    findOne(slug: string): {
         id: number;
-        slug: any;
         title: string;
+        slug: any;
         artist: string;
         audio: string;
         cover: string;
-    })[];
-    findOne(id: string): string;
+    };
     update(id: string, updateSoundDto: UpdateSoundDto): string;
     remove(id: string): string;
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateSoundDto } from './dto/create-sound.dto';
 import { UpdateSoundDto } from './dto/update-sound.dto';
 import { sounds } from './sounds';
@@ -13,8 +13,10 @@ export class SoundsService {
     return sounds;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} sound`;
+  findOne(slug: string) {
+    const find = sounds.find(find=>find.slug == slug)
+    throw new NotFoundException('Música não encontrada')
+    return find;
   }
 
   update(id: number, updateSoundDto: UpdateSoundDto) {

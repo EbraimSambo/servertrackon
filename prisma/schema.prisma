@@ -46,3 +46,13 @@ model Sound {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+
+enum Category {
+  Rap
+  Kizomba
+  Hause
+  Semba
+  Kuduro
+  Afrobit
+}

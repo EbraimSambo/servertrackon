@@ -19,9 +19,11 @@ export class SoundsController {
     return this.soundsService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.soundsService.findOne(+id);
+  @UseGuards(JwtGuardSounds)
+  @Get(':slug')
+  findOne(@Param('slug') slug: string) {
+    console.log(slug)
+    return this.soundsService.findOne(slug);
   }
 
   @Patch(':id')

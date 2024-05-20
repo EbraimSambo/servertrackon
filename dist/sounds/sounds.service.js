@@ -16,8 +16,10 @@ let SoundsService = class SoundsService {
     findAll() {
         return sounds_1.sounds;
     }
-    findOne(id) {
-        return `This action returns a #${id} sound`;
+    findOne(slug) {
+        const find = sounds_1.sounds.find(find => find.slug == slug);
+        throw new common_1.NotFoundException('Música não encontrada');
+        return find;
     }
     update(id, updateSoundDto) {
         return `This action updates a #${id} sound`;
