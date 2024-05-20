@@ -15,7 +15,7 @@ export class SoundsService {
 
   findOne(slug: string) {
     const find = sounds.find(find=>find.slug == slug)
-    throw new NotFoundException('Música não encontrada')
+    if(!find) throw new NotFoundException('Música não encontrada')
     return find;
   }
 
