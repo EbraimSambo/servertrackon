@@ -5,7 +5,7 @@ export declare class SoundsService {
     findAll(): {
         id: number;
         title: string;
-        slug: any;
+        slug: string;
         artist: string;
         audio: string;
         cover: string;
@@ -13,7 +13,7 @@ export declare class SoundsService {
     findOne(slug: string): {
         id: number;
         title: string;
-        slug: any;
+        slug: string;
         artist: string;
         audio: string;
         cover: string;
