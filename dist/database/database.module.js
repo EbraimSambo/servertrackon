@@ -6,21 +6,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppModule = void 0;
+exports.DatabaseModule = void 0;
 const common_1 = require("@nestjs/common");
-const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
-const sounds_module_1 = require("./sounds/sounds.module");
-const queries_module_1 = require("./queries/queries.module");
-const database_module_1 = require("./database/database.module");
-let AppModule = class AppModule {
+const database_service_1 = require("./database.service");
+let DatabaseModule = class DatabaseModule {
 };
-exports.AppModule = AppModule;
-exports.AppModule = AppModule = __decorate([
+exports.DatabaseModule = DatabaseModule;
+exports.DatabaseModule = DatabaseModule = __decorate([
     (0, common_1.Module)({
-        imports: [sounds_module_1.SoundsModule, queries_module_1.QueriesModule, database_module_1.DatabaseModule],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        providers: [database_service_1.DatabaseService]
     })
-], AppModule);
-//# sourceMappingURL=app.module.js.map
+], DatabaseModule);
+//# sourceMappingURL=database.module.js.map
